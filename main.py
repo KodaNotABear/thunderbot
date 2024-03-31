@@ -33,14 +33,14 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-
-@tree.command(name="ammo", description="search for an ammo type", guild=discord.Object(
+#TODO add permissions check for administrator.
+@tree.command(name="purge", description="deletes n messages", guild=discord.Object(
     # Add the guild ids in which the slash command will appear.
     # If it should be in all, remove the argument, but note that
     # it will take some time (up to an hour) to register the command if it's for all guilds.
     id=guild_ID))
-async def ammo_command(ctx):
-    return
+async def purge(ctx, n: int):
+    await ctx.channel.purge(limit=n+1)
 
 
 @tree.command(name="thunderbot", description="Talk to ThunderBot", guild=discord.Object(id=guild_ID))
