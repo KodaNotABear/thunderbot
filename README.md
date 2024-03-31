@@ -1,0 +1,1 @@
+Welcome to ThunderBot. ThunderByte Studios discord managment bot.
